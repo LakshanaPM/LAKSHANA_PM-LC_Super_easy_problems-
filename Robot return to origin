@@ -1,0 +1,22 @@
+bool judgeCircle(char* moves) {
+    int r1=0,l1=0,u1=0,d1=0;
+    for(int i=0;moves[i]!='\0';i++){
+        if(moves[i]=='R'){
+            r1++;
+            
+        }
+        else if(moves[i]=='U'){
+            u1++;
+        }
+        else if(moves[i]=='L'){
+            l1++;
+        }
+        else if(moves[i]=='D'){
+            d1++;
+        }
+    }
+    if(d1==u1&&l1==r1){
+        return true;
+    }
+    return false;
+}
