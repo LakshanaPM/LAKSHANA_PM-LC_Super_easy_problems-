@@ -1,0 +1,17 @@
+bool checkIfPangram(char* sentence) {
+    int* count=(int*)malloc(26*sizeof(int));
+    for(int i=0;i<26;i++){
+        count[i]=0;
+    }
+    char min='a';
+    for(int i=0;sentence[i]!='\0';i++){
+        ++count[sentence[i]-min];
+    }
+    for(int i=0;i<26;i++){
+        if(count[i]==0){
+            return false;
+        }
+    }
+    free(count);
+    return true;
+}
